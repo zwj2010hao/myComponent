@@ -1,0 +1,59 @@
+.wrap{
+    min-height: 1000px;
+    background-color:#fff!important;
+    padding: 50px;
+}
+h2{
+	padding: 20px;
+}
+.section{
+	margin:10px;
+}
+i{
+	text-decoration: normal;
+}
+
+
+//start
+@mixin button($width,$height,$fs,$braduis){
+  width: $width;
+  height: $height;
+  line-height: $height;
+  font-size: $fs;
+  text-align: center;
+  display: inline-block;
+  border:none;
+  border-radius: $braduis;
+  transition: 0.25s;
+  -webkit-backface-visibility: hidden;//解决transition闪动
+}
+%btn-class1{
+	color: #fff;
+  	background-color: #5d9cec;
+	&:hover{
+		background-color: #548cd4;
+	}
+	&:active{
+		background-color: #3B7ED4;
+		border:none;
+	}
+}
+%btn-disabled{
+	color: #fff;
+  	background-color: #95a5a6;
+  	cursor: default!important;
+}
+.btn{
+    @include button(120px,50px,12px,6px);
+}
+.btn-class1{
+	@extend %btn-class1;
+}
+.btn-disabled{
+	@extend %btn-disabled;
+}
+.button{
+	@include button(120px,50px,12px,6px);
+	cursor: pointer;
+	outline:none;
+}
