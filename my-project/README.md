@@ -1,4 +1,4 @@
-# my-component
+# my-components
 
 > A Vue.js project
 
